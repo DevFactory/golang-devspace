@@ -1,0 +1,31 @@
+--- # devspaces.yml
+name: golang
+description:  Development environment template for Golang
+
+# If you want to use a different Dockerfile for your DevSpace, provide the path
+# here.
+docker-file: Dockerfile
+
+# If you need additional files when building your Dockerfile, such as some
+# application binaries that your Dockerfile references, list the glob paths to
+# include here. They are relative to this devspaces.yml file.
+docker-build-includes: |
+    **/*
+ports:
+- protocol: http # can be udp|tcp|http
+  port-number: 80
+  description: web app http port
+
+sync-ignore: |
+  .git
+  .gitmodules
+  .github
+  .idea
+  .DS_Store
+  Thumbs.db
+
+  tags
+  *.pprof
+  *.fasthttp.gz
+  /github.com
+  /golang.org
