@@ -1,4 +1,4 @@
-FROM buildpack-deps:cosmic
+FROM buildpack-deps:bionic
 
 ENV DEBIAN_FRONTEND noninteractive
 ENV INITRD No
